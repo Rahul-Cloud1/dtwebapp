@@ -1,0 +1,58 @@
+{% extends 'layouts/base-fullscreen.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block title %} DigitalTranscend {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ config.ASSETS_ROOT }}/css/index.css">
+{% endblock stylesheets %}
+
+{% block content %}
+<body>
+    <section class="showcase">
+      <header>
+        <h2 class="logo">DigitalTranscend</h2>
+  <!--      <div class="toggle"></div>-->
+      </header>
+      <video src="https://storage.googleapis.com/dtwebapp/website/assets/main_video_latest.mp4"  loop autoplay muted ></video>
+      <div class="overlay"></div>
+      <div class="text">
+        <h2>Never Stop </h2>
+        <h3>Exploring The World</h3>
+        <p>DigitalTranscend reduces the gap between the real and virtual world</p>
+        <a href="{{ url_for('authentication_blueprint.login') }}">Login</a>
+        <a href="{{ url_for('authentication_blueprint.register') }}">Register</a>
+        <a href="{{ url_for('authentication_blueprint.about_us') }}">About Us</a>
+        <p>To run the demo, please log in and obtain the token by <a href="mailto:info@digitaltranscend.io">email</a></p>
+      </div>
+  <!--    <ul class="social">-->
+  <!--      <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>-->
+  <!--      <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>-->
+  <!--      <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>-->
+  <!--    </ul>-->
+    </section>
+    <div class="menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Destination</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  <!--  <script>-->
+  <!--    const menuToggle = document.querySelector('.toggle')-->
+  <!--    const showcase = document.querySelector('.showcase')-->
+  <!--    menuToggle.addEventListener('Click', ()=> {-->
+  <!--      menuToggle.classList.toggle('active')-->
+  <!--      showcase.classList.toggle('active')-->
+  <!--    })-->
+  <!--  </script>-->
+  </script>
+  </body>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}{% endblock javascripts %}

@@ -1,0 +1,72 @@
+{% extends 'layouts/base-fullscreen.html' %}
+
+{% block title %} Sign IN {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+        <div class="col-12">
+
+            {% include "includes/navigation-fullscreen.html" %}
+
+        </div>
+    </div>
+</div>
+
+<main class="main-content  mt-0">
+    <section>
+        <div class="page-header min-vh-75">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
+                        <div class="card card-plain mt-8">
+                            <div class="card-header pb-0 text-left bg-transparent">
+                                <h3 class="font-weight-bolder text-info text-gradient">
+                                    About Us
+                                </h3>
+                            </div>
+                            <div class="card-body">
+
+
+                            </div>
+                            <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                                <p class="mb-4 text-sm mx-auto">
+                                    <p>
+                                    At DigitalTranscend, we specialize in transforming your projects into virtual ones,
+                                    whether they&apos;re already in progress or still just an idea. We harness our
+                                    extensive knowledge and experience in the fields of arts, design, and architecture
+                                    to create immersive and engaging virtual experiences that will take your project to
+                                    the next level.</p>
+                                <p>To learn more about our services and how we can help you, send us an email at <a
+                                        href="mailto:info@digitaltranscend.io">info@digitaltranscend.io</a> and one of
+                                    our experts will get back to you as soon as possible. We&apos;ll work with you every
+                                    step of the way to ensure that your vision is fully realized and that your project
+                                    is a success.
+                                </p>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
+                            <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6"
+                                 style="background-image:url('{{ config.ASSETS_ROOT }}/img/curved-images/curved7.jpg')"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% include "includes/footer-fullscreen.html" %}
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}{% endblock javascripts %}

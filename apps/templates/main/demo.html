@@ -1,0 +1,107 @@
+{% extends 'layouts/base-loggedin-fullscreen.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block title %} Demo {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="container position-sticky z-index-sticky top-1">
+    <div class="row">
+        <div class="col-12">
+
+            {% include "includes/navigation-demo.html" %}
+        </div>
+    </div>
+</div>
+
+<main class="main-content  mt-0">
+
+    <section class="min-vh-100 mb-8">
+        <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg"
+             style="background-image: url('{{ config.ASSETS_ROOT }}/img/curved-images/curved14.jpg');">
+            <span class="mask bg-gradient-dark opacity-6"></span>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 text-center mx-auto">
+                        <h1 class="text-white mb-2 mt-5">Welcome!</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row mt-lg-n10 mt-md-n11 mt-n10">
+                <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
+                    <div class="card z-index-0">
+
+                        <div class="card-header text-center pt-4">
+                            <form role="form text-left" method="post" action="">
+
+                                {{ create_demo_form.hidden_tag() }}
+
+                                <label>Project</label>
+                                <div class="mb-3">
+                                    {{ create_demo_form.project(class="form-control") }}
+                                </div>
+                                <label>Region</label>
+                                <div class="mb-3">
+                                    {{ create_demo_form.region(class="input form-control") }}
+                                </div>
+                                <label>Timeout</label>
+                                <div class="mb-3">
+                                    {{ create_demo_form.timeout(class="input form-control") }}
+                                </div>
+                                <label>Token</label>
+                                <div class="mb-3">
+                                    {{ create_demo_form.token( class="form-control") }}
+                                </div>
+                                <div class="mb-3">
+                                    {{ create_demo_form.triggerDemo( class="btn bg-gradient-dark w-100 my-4 mb-2") }}
+                                </div>
+
+                            </form>
+                            <div>
+                                    <label>Response</label>
+                                    {% if success %}
+                                        <div class="mb-3">
+                                            {% if results %}
+                                            {% for key, value in results.items() %}
+                                            <a href="{{ value }}" , target="_blank">{{ key }}</a>
+                                            {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    {% else %}
+                                        <div class="mb-3">
+                                            {% if results %}
+                                            {% for key, value in results.items() %}
+                                            <p> {{ key }}: {{ value }}</p>
+                                            {% endfor %}
+                                            {% endif %}
+                                    {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="row px-xl-5 px-sm-4 px-3">
+
+                            <div class="mt-2 position-relative text-center">
+                                <p class="text-sm font-weight-bold mb-2 text-secondary text-border d-inline z-index-2 px-3">
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include "includes/footer-fullscreen.html" %}
+
+</main>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}{% endblock javascripts %}
